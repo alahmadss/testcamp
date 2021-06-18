@@ -40,35 +40,55 @@
                     <div class="section-headline text-center">
                         <h1>Nama Lokasi</h1>
                     </div>
-                    <form>
+                    <form class="needs-validation" novalidate id="form" action="" method="">
                         <br>
                         <div class="p-5">
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Username</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                            <div id="emailHelp" class="form-text">Isikan username anda.</div>
+                            <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                            <div id="usernameh" class="form-text" >Isikan username anda.</div>
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                            <div id="emailHelp" class="form-text">Isikan email anda.</div>
+                            <label for="exampleInputEmail1" class="form-label">Nama spot</label>
+                            <br>
+                            <select class="form-select" name="nama_spot" aria-label="Default select example" required>
+                              <option selected>Pilih spot camping</option>
+                              <option value="1">One</option>
+                              <option value="2">Two</option>
+                              <option value="3">Three</option>
+                            </select>
+                            <div id="nmspth" class="form-text">Pilih spot camping.</div>
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
+                            <label for="exampleInputPassword1" class="form-label">Nomor KTP</label>
+                            <input type="text" name="no_ktp" class="form-control" id="exampleInputPassword1" required>
+                            <div id="nmrktph" class="form-text">Isikan nomor KTP anda.</div>
                         </div>
-                        <a href="login.html" style="text-decoration: none; color:rgb(19, 0, 187);">Sudah mempunyai akun? login.</a>
-                        &nbsp;&nbsp;
-                        &nbsp;&nbsp;
-                        &nbsp;&nbsp;
-                        &nbsp;&nbsp;
-                        <a href="index.html" style="text-decoration: none; color:rgb(19, 0, 187);">Kembali ke website</a>
+                        <div class="mb-3">
+                          <label for="exampleInputPassword1" class="form-label">Alamat</label>
+                          <div class="form-floating">
+                            <textarea class="form-control" name="alamat" placeholder="Leave a comment here" id="floatingTextarea" required></textarea>
+                            <label for="floatingTextarea">Isikan alamat anda</label>
+                          </div>
+                      </div>
+                          <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Nomor Telepon</label>
+                            <input type="text" name="no_telp" class="form-control" id="exampleInputPassword1" required>
+                            <div id="nmrktph" class="form-text">Isikan nomor telepon anda.</div>
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleInputPassword1" class="form-label">Tanggal check in</label>
+                          <input type="date" name="tgl_check_in" class="form-control" id="exampleInputPassword1" required>
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Tanggal check out</label>
+                        <input type="date" name="tgl_check_out" class="form-control" id="exampleInputPassword1" required>
+                        </div>
                         <br>
                         <br>
                         <div class="section-headline text-center">
                             <button type="submit" class="btn btn-outline-dark">Submit</button>
                           </div>
-                        
                         </div>
                     </form>
                 </div>
@@ -108,5 +128,22 @@
         </footer>
           <!--JavaScript-->
         <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../jquery/jquery-3.6.0.js"></script>
+        <script>
+          (function() {
+            "use strict";
+            
+            window.addEventListener("load", function() {
+              var form = document.getElementById("form");
+              form.addEventListener("submit", function(event) {
+                if (form.checkValidity() == false) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+                form.classList.add("was-validated");
+              }, false);
+            }, false);
+          }());
+          </script>​
     </body>
 </html>
