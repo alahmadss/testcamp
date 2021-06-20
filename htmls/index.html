@@ -28,12 +28,12 @@
         font: 14px;
         font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       }
-      .song{
-        margin: auto;
-      }
     </style>
   </head>
   <body>
+    <audio hidden autoplay loop>
+      <source src="../audios/01-lifelike.mp3" type="audio/mpeg">
+    </audio>
     <div class="preloader">
       <div class="loading">
         <img src="../img/nurture.gif" width="80">
@@ -182,9 +182,6 @@
         <a class="text-reset fw-bold" href="https://www.upnyk.ac.id/"><strong>UPNYK</strong></a>
       </div>
     </footer>
-    <div class="song">
-      <embed src="../audios/01-lifelike.wav" autoplay="true" loop="true" volume="60"/>
-    </div>
     
     <!--JavaScript-->
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
@@ -192,7 +189,6 @@
     <script type="text/javascript">
       $(document).ready(function(){
       $(".preloader").fadeOut(2500);
-      $(".song").fadeOut(1);
       });
     </script>
   </body>
